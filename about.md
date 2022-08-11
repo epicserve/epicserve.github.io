@@ -4,15 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+The name Epicserve is a combination of the words **epic** and **serve**. **Epic** symbolizes the kind of websites Epicserve works on as well as symbolizes the kind of work Epicserve does. **Serve** symbolizes how Epicserve likes to work and serve as a part of a team. Even though companies contract Epicserve to work on their website projects, Epicserve's mindset is that they are part of a team, serving together to make epic websites!
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Epicserve was started in 2003 by Brent O'Connor, who wanted a company for working on freelance website and web application projects. When Brent isn't working on web projects he loves spending time with his wife and three boys and considers his relationship with Jesus and family his highest priority. 
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Currently, Brent is living in Manhattan, Kansas where he works as a co-founder and Director of Engineering at [Canopy](https://canopyteam.org).
