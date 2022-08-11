@@ -24,7 +24,8 @@ author: Brent O'Connor
 description: >- # this means to ignore newlines until "baseurl:"
   Web development with a focus on epic service!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+domain: epicserve.github.io
+url: "https://epicserve.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: epicserve
 github_username:  epicserve
 
