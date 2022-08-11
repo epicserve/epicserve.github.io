@@ -1,0 +1,62 @@
+// variables
+$secondary-brand-color: #ff7300 !default;
+$secondary-brand-color-light: lighten($secondary-brand-color, 40%) !default;
+
+/**
+ * Links
+ */
+ a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $brand-color;
+  }
+
+  &:hover {
+    color: $secondary-brand-color;
+    text-decoration: underline;
+  }
+
+  .social-media-list &:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: underline;
+    }
+  }
+}
+
+// home page
+.slogan {
+    padding: 10px 0;
+    font-family: Anton, sans-serif;
+    font-size: 6vw;
+    text-align: center;
+    color: $brand-color;
+  }
+
+// layout
+.brand-logo {
+  width: 138px !important;
+  height: 36px !important;
+  margin-top: 0.5em;
+  background-color: $brand-color;
+  mask: url('/assets/images/epicserve-logo-horizontal-white.svg') no-repeat 50% 50%;
+  display: inline-block;
+
+  &:hover {
+    background-color: $secondary-brand-color;
+  }
+
+  span {
+    display: none;
+  }
+}
+.site-header {
+  border-top: 10px solid $brand-color;
+  border-bottom: 1px solid $secondary-brand-color-light;
+}
+.site-footer {
+  border-top: 1px solid $secondary-brand-color-light;
+}

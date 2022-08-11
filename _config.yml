@@ -22,7 +22,7 @@ title: Epicserve
 email: brent@epicserve.com
 author: Brent O'Connor
 description: >- # this means to ignore newlines until "baseurl:"
-  Epicserve is a web development agency.
+  Web development with a focus on epic service!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: epicserve
