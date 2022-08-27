@@ -11,3 +11,8 @@
 
 1. Run the server: `make serve`
 2. Lint: `make lint`
+
+## Documentation
+
+* [Jekyll](https://jekyllrb.com/docs/)
+* 
