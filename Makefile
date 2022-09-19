@@ -27,8 +27,8 @@ help:
 
 .PHONY: serve
 serve: ## Run the Jekyll server with livereload
-	@bundle exec jekyll serve --livereload
+	@docker-compose up
 
 .PHONY: lint
 lint: ## Do lint checking
-	@bundle exec rake test
+	@docker-compose run --rm jekyll bundle exec rake test
