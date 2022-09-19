@@ -101,7 +101,11 @@ class DjangoModelJSONEncoder(DjangoJSONEncoder):
 
 @register.filter
 def to_json(value: Any, indent: int = None):
-    return mark_safe(json.dumps(value, cls=DjangoModelJSONEncoder, indent=indent))
+    return mark_safe(json.dumps(value, cls=DjangoModelJSONEncoder, indent=indent).translate({
+        ord(">"): "\\u003E",
+        ord("<"): "\\u003C",
+        ord("&"): "\\u0026",
+    }))
 {% endhighlight %}
 
 With the previous `to_json` template filter created, then using it in a template
@@ -144,10 +148,31 @@ get_data_from_data_attribute();
 </script>
 {% endhighlight %}
 
-Hopefully, this post will end up saving engineers a lot of time and
-prevent a lot of bugs from being created. I also hope that maybe Django could
-either include some of this information in the documentation or add a template
-filter like `to_json` to Django to save engineers from a lot of hassle.
+## So why not use Django's json_script template tag?
+
+The short answer is you can use the [json_script][json_script] template tag, but there are some things to consider.
+First, if you look at the [actual code][json_script_code] you'll see that the filter wraps the code in a script tag
+which I've found to not be necessary. Secondly, there isn't a great way to use a subclassed `DjangoJSONEncoder` that we
+need if there are custom data types that the default `DjangoJSONEncoder` doesn't handle.
+
+## What about security?
+
+You should always be mindful of security and test your application to make sure that it hasn't created a security
+exploit. I also recommend reading Django's excellent [security documentation][security_docs]. Having said that, in our
+example filter, `to_json()` I'm using [mark_safe][mark_safe], which I'm fine with because I've read and know the
+precautions to take. First, under no circumstances pass user-submitted data to the `to_json()` filter unless you know
+the data has been sanitized with something like [bleach][bleach]. Secondly, write some tests and test your application
+manually for XSS exploits.
+
+I should also mention that in our example data we're using `User.objects.all()` for illustrative purposes only. However,
+those with a keen eye might recognize that this would send the hashed password to the template, which I don't
+recommend. Instead, to avoid this I recommend you something like
+`User.objects.values_list('first_name', 'last_name', 'email')` or something equivalent.
+
+## Final Thoughts
+Hopefully, this post will end up saving engineers a lot of time and prevent a lot of bugs from being created. I also
+hope that maybe Django could either include some of this information in the documentation or add a template filter
+like `to_json` to Django that could be easily extended with your project's own default encoder.
 
 [safe]: https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#std-templatefilter-safe
 [escapejs]: https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#escapejs
@@ -157,3 +182,8 @@ filter like `to_json` to Django to save engineers from a lot of hassle.
 [Vue]: https://vuejs.org/
 [React]: https://reactjs.org/
 [force_escape]: https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#force-escape
+[json_script]: https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#json-script
+[json_script_code]: https://github.com/django/django/blob/ae509f8f0804dea0eea89e27329014616c9d4cc0/django/utils/html.py#L62
+[security_docs]: https://docs.djangoproject.com/en/4.1/topics/security/#cross-site-scripting-xss-protection
+[mark_safe]: https://docs.djangoproject.com/en/4.1/ref/utils/#django.utils.safestring.mark_safe
+[bleach]: https://github.com/mozilla/bleach
