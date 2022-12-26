@@ -15,4 +15,3 @@
 ## Documentation
 
 * [Jekyll](https://jekyllrb.com/docs/)
-* 
