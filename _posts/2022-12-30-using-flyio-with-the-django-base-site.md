@@ -91,7 +91,7 @@ As of the writing of this blog post, these are the steps I used to deploy the Dj
    fly secrets set SECRET_KEY=$(python -c "import random; print(''.join(random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789%^&*(-_=+)') for i in range(50)))")
    ```
 6. Run `fly deploy` to deploy your app to Fly.io.
-7. Run `fly ssh console && cd /srv/app` and then run `./manage.py migrate && ./manage.py createsuperuser` to create your
+7. Run `fly ssh console` and then run `cd /srv/app && ./manage.py migrate && ./manage.py createsuperuser` to create your
    user for signing in. Exit your ssh session.
 8. Run `fly open` to open the app in your browser. You won't be able to login via /accounts/login/ until you validate
    your email address. To do this, go to /admin/ and sign in. Then go to /admin/account/emailaddress/ and mark your
