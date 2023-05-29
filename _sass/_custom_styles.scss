@@ -41,18 +41,21 @@ $secondary-brand-color-light: lighten($secondary-brand-color, 40%) !default;
   width: 138px !important;
   height: 36px !important;
   margin-top: 0.5em;
-  background-color: $brand-color;
-  mask: url('/assets/images/epicserve-logo-horizontal-white.svg') no-repeat 50% 50%;
+  background-position: 50% 50%;
   display: inline-block;
+  .logo {
+    fill: $brand-color
+  }
 
-  &:hover {
-    background-color: $secondary-brand-color;
+  &:hover .logo {
+    fill: $secondary-brand-color;
   }
 
   span {
     display: none;
   }
 }
+
 .site-header {
   border-top: 10px solid $brand-color;
   border-bottom: 1px solid $secondary-brand-color-light;
