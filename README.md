@@ -9,8 +9,8 @@
 
 ## Usage
 
-1. Run the server: `make serve`
-2. Lint: `make lint`
+1. Run the server: `just start`
+2. Lint: `just lint`
 
 ## Documentation
 
