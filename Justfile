@@ -5,12 +5,12 @@
 
 # Do lint checking
 @lint:
-    docker-compose run --rm jekyll bundle exec rake test
+    docker compose run --rm jekyll bundle exec rake test
 
 # Start the Jekyll server with livereload
 @start:
-    docker-compose up
+    docker compose up
 
 # Stop the Jekyll server with livereload
 @stop:
-    docker-compose down -t 0
+    docker compose down
