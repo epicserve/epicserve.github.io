@@ -111,7 +111,7 @@ With the defaults the resulting structure looks like this:
 └── uv.lock
 ```
 
-If say no to the defaults, then the resulting structure looks like this:
+If you say no to the defaults, then the resulting structure looks like this:
 ```bash
 .
 ├── config
