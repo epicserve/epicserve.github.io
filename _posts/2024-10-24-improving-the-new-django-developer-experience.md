@@ -95,6 +95,34 @@ Here's what creating a new Django project with DJ Beat Drop looks like:
 
 <img alt="DJ Beat Drop New Project Bash Session" src="/assets/images/better-django-experience/beatdrop.gif" width="100%"/>
 
+With the defaults the resulting structure looks like this:
+```bash
+.
+├── README.md
+├── config
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── db.sqlite3
+├── manage.py
+├── pyproject.toml
+└── uv.lock
+```
+
+If say no to the defaults, then the resulting structure looks like this:
+```bash
+.
+├── config
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
+```
+
 ## Join the Movement
 
 If you're interested in improving the Django developer experience, I invite you to try DJ Beat Drop and share your feedback. With community support, this could become the recommended way to start new Django projects, making the framework even more accessible to newcomers while maintaining the power and flexibility that Django developers love.
