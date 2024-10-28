@@ -25,12 +25,18 @@ description: >- # this means to ignore newlines until "baseurl:"
   Web development with epic service!
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: epicserve.github.io
-url: "https://epicserve.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: epicserve
-github_username:  epicserve
+url: "https://epicserve.com/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: minima
+
+minima:
+  social_links:
+    - { platform: github,  user_url: "https://github.com/epicserve", username: "epicserve" }
+    - { platform: linkedin,  user_url: "https://www.linkedin.com/in/epicserve", username: "epicserve" }
+    - { platform: twitter, user_url: "https://x.com/epicserve", username: "epicserve" }
+    - { platform: mastodon, user_url: "https://mastodon.social/@epicserve", username: "epicserve" }
+
 plugins:
   - jekyll-feed
 
@@ -58,3 +64,4 @@ exclude:
   - README.md
   - Makefile
   - Rakefile
+

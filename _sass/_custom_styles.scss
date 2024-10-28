@@ -63,3 +63,21 @@ $secondary-brand-color-light: lighten($secondary-brand-color, 40%) !default;
 .site-footer {
   border-top: 1px solid $secondary-brand-color-light;
 }
+
+ul.social-media-list {
+  display: inline;
+  text-align: right;
+  li {
+    display: inline;
+    margin-right: 0.05em;
+  }
+}
+.footer-col-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .footer-col:last-child {
+    text-align: right;
+  }
+}
