@@ -65,3 +65,11 @@ exclude:
   - Makefile
   - Rakefile
 
+collections:
+  til:
+    output: true
+    permalink: /til/:title/
+
+feed:
+  collections:
+    - til
