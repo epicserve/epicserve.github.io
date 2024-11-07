@@ -3,10 +3,11 @@ layout: post
 title: "Improving the New Django Developer Experience"
 date: 2024-10-24 16:26:00 -0500
 categories: django
+image:
+  path: /assets/images/better-django-experience/improving-the-new-django-developer-experience-header-image.webp
+  alt: "Improving the New Django Developer Experience Header Image"
+  caption: "Image created by ChatGPT"
 ---
-
-<img alt="Improving the New Django Developer Experience Header Image" src="/assets/images/better-django-experience/improving-the-new-django-developer-experience-header-image.webp" width="100%"><br>
-<small>Image created by ChatGPT</small>
 
 At DjangoCon 2024, I gave a lightning talk about improving the experience for new Django developers. While Django is an incredibly powerful framework, there's one aspect of the initial developer experience that I believe we can significantly enhance. Let's explore the current onboarding experience and how we might make it more intuitive for newcomers.
 

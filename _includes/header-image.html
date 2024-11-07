@@ -1,0 +1,8 @@
+{% if page.image %}
+<div class="header-image">
+    <div class="image-tag"><img alt="{{ page.image.alt }}" src="{{ page.image.path }}" width="100%"></div>
+    {% if page.image.caption %}
+        <div class="image-caption"><small>{{ page.image.caption }}</small></div>
+    {% endif %}
+</div>
+{% endif %}

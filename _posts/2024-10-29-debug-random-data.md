@@ -3,10 +3,11 @@ layout: post
 title: "Debugging Randomly Failing Tests with Reproducible Random Seeds"
 date: 2024-10-29 08:58:00 -05:00
 categories: django
+image:
+  path: /assets/images/debug-random-data/debug-random-data-header.webp
+  alt: "Debugging Randomly Failing Tests with Reproducible Random Seeds Header Image"
+  caption: "Image created by ChatGPT, because it's better than no image."
 ---
-
-<img alt="Debugging Randomly Failing Tests with Reproducible Random Seeds Header Image" src="/assets/images/debug-random-data/debug-random-data-header.webp" width="100%"><br>
-<small>Image created by ChatGPT, because it's better than no image.</small>
 
 There are two things I despise in this world: dealing with printers that don't work and debugging randomly
 failing tests.
