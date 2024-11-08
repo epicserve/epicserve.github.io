@@ -1,4 +1,4 @@
-{% if page.image %}
+{% if page.image and page.image.alt != "Epicserve Logo" %}
 <div class="header-image">
     <div class="image-tag"><img alt="{{ page.image.alt }}" src="{{ page.image.path }}" width="100%"></div>
     {% if page.image.caption %}

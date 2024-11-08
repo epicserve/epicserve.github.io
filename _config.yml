@@ -70,7 +70,15 @@ collections:
     output: true
     permalink: /til/:year/:month/:day/:title/
 
-
 feed:
   collections:
     - til
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      image:
+        path: /assets/images/epicserve-default-social-share-logo.png
+        alt: "Epicserve Logo"
