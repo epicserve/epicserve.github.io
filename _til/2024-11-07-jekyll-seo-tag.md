@@ -20,3 +20,16 @@ image:
   path: /assets/images/post-image.webp
   alt: "Post Image Alt Text"
 ```
+
+If you want a default image to be used when no image is specified, you can set it in the `_config.yml` file:
+
+```yaml
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      image:
+        path: /assets/images/default-social-share-image.png
+        alt: "Epicserve Logo"
+```
