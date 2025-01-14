@@ -16,6 +16,10 @@ When working with datetime objects in Django there seems to be a lot of confusio
 conversions. This cheatsheet aims to provide a quick reference for common datetime operations in Django, including
 timezone handling, formatting, and testing.
 
+I will maintain this cheatsheet as a living document, updating it with new information and examples as needed. I have
+created a [companion repository](https://github.com/epicserve/django-datetime-cheatsheet) that was used as a reference
+for this cheatsheet. If you find any issues in this cheatsheet, then don't hesitate to open an issue in the repository.
+
 This guide assumes you're familiar with Django and Python's datetime module, and that you have `settings.USE_TZ` set to
 `True` in your Django project. Also, for this guide, we'll assume the `TIME_ZONE` setting in your Django project is
 set `'America/Chicago'`.
@@ -48,6 +52,17 @@ Getting the current datetime in UTC is straightforward:
 ```python
 >>> dj_tz.now()
 datetime.datetime(2024, 12, 6, 22, 51, 15, 145061, tzinfo=datetime.timezone.utc)
+```
+
+<div class="notice notice-tip">
+  <strong>Notice:</strong> <code class="language-plaintext highlighter-rouge">now()</code> returns the a datetime object with the UTC timezone.
+</div>
+
+Get the current datetime in the local timezone:
+
+```python
+>>> dj_tz.localtime(dj_tz.now())
+datetime.datetime(2024, 12, 6, 16, 51, 15, 145061, tzinfo=zoneinfo.ZoneInfo(key='America/Chicago'))
 ```
 
 ### Naive vs Aware Datetimes
