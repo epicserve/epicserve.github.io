@@ -135,6 +135,18 @@ operations in a different timezone.
 'America/Chicago'
 ```
 
+Use the `override` context manager to temporarily change the timezone:
+
+```python
+with dj_tz.override(ZoneInfo("America/Los_Angeles")):
+    event_start_time = dj_tz.make_aware(datetime(2024, 1, 1, 22, 30))
+    event_end_time = event_start_time + timedelta(hours=1)
+    event = baker.make("events.Event")
+    event.start_time = event_start_time
+    event.end_time = event_end_time
+    event.save()
+```
+
 ## Formatting Datetime Objects
 
 Django provides several ways to format datetime objects into strings.
